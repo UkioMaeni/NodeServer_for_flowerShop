@@ -8,11 +8,11 @@ class UserController {
     }
 
     async getUsers(request, response) {
-        
+        response.json("users");
     }
 
     async getOneUser(request, response) {
-        
+
     }
 
     async updateUser(request, response) {
