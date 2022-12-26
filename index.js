@@ -1,5 +1,9 @@
 const Express = require("express");
-const userRouter = require("./routes/user_routes");
+const userRouter = require("./routes/userRouter");
+// const shopRouter = require("./routes/shopRouter");
+// const cartRouter = require("./routes/cartRouter");
+// const flowerRouter = require("./routes/flowerRouter");
+
 const PORT = 5000;
 
 const app = Express();
@@ -7,12 +11,12 @@ const app = Express();
 app.use(Express.json());
 
 app.get("/", (request, response) => {
-    console.log("hello world")
-    response.json("hello world")
-    console.log(request.body)
+    response.json("Home sweet home")
 })
 app.use("/user", userRouter);
-
+// app.use("/shop", shopRouter);
+// app.use("/cart", cartRouter);
+// app.use("/flower", flowerRouter);
 
 
 

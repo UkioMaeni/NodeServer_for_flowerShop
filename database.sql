@@ -2,14 +2,14 @@
 create TABLE IF NOT EXISTS Users(
     id SERIAL PRIMARY KEY,
     email VARCHAR UNIQUE NOT NULL,
-    phoneNumber INTEGER UNIQUE NOT NULL,
+    phoneNumber VARCHAR UNIQUE NOT NULL,
     password VARCHAR NOT NULL
 );
 
 -- для хранения информации о продаваемых цветах 
 create TABLE IF NOT EXISTS Flowers(
     id SERIAL PRIMARY KEY,
-    price INTEGER,
+    price  NUMERIC(6, 2),
     photoPath VARCHAR,
     description TEXT
 );
@@ -30,7 +30,6 @@ create TABLE IF NOT EXISTS PurchasedFlowers(
     flowerId INTEGER,
     FOREIGN KEY (flowerId) REFERENCES Flowers (id),
     numberFlowers SMALLINT,
-
     PRIMARY Key (transactionId, flowerId)
 );
 
@@ -41,6 +40,5 @@ create TABLE IF NOT EXISTS Carts(
     flowerId INTEGER,
     FOREIGN KEY (flowerId) REFERENCES Flowers (id),
     numberFlowers SMALLINT,
-
     PRIMARY KEY (userId, flowerId)
 );
