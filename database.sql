@@ -23,7 +23,7 @@ create TABLE IF NOT EXISTS Transactions(
     timePurchase TIMESTAMP
 );
 
--- для зранения информации о совершенных покупках (какие именно цветы были куплены)
+-- для xранения информации о совершенных покупках (какие именно цветы были куплены)
 create TABLE IF NOT EXISTS PurchasedFlowers(
     transactionId INTEGER,
     FOREIGN KEY (transactionId) REFERENCES Transactions (id),
